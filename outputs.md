@@ -32,6 +32,6 @@ Brighten your smile with our safe and effective teeth whitening treatments. We h
 
 ## Call to Action
 
-Your smile deserves expert care.  
+Your smile deserves expert care.   
 Schedule your dental appointment today and experience professional, friendly, and reliable dental services in Hyderabad.
 

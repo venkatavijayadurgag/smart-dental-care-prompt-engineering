@@ -34,3 +34,40 @@ Your smile deserves the best care.
 Schedule your dental appointment today and take the first step toward healthier teeth.
 
 📅 Book an Appointment Now
+
+
+---
+
+## Website Copy Output – Improved Version (Task 2)
+
+## Homepage Introduction
+Caring Dental Solutions for Confident Smiles  
+Professional and comfortable dental care in Hyderabad for families and busy professionals. We combine modern technology with gentle care to keep your smile healthy and bright.
+
+---
+
+## About Us
+Our dental clinic in Hyderabad is built on trust, expertise, and patient comfort. With experienced dentists, advanced equipment, and strict hygiene standards, we ensure safe and effective dental treatments for every age group.
+
+We focus on personalized care, clear communication, and long-term oral health solutions for our patients.
+
+---
+
+## Our Services
+
+### Dental Checkup
+Comprehensive dental checkups designed to detect issues early and maintain strong, healthy teeth with professional care.
+
+### Braces
+Modern braces solutions to straighten teeth comfortably and effectively, helping you achieve a confident and beautiful smile.
+
+### Teeth Whitening
+Safe and advanced teeth whitening treatments to remove stains and restore the natural brightness of your smile.
+
+---
+
+## Book an Appointment
+Your oral health matters. Book your appointment today and experience reliable, comfortable, and expert dental care in Hyderabad.
+
+📅 Schedule Your Visit Now
+

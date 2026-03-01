@@ -10,6 +10,7 @@ document.addEventListener("DOMContentLoaded", () => {
       : "Estimated Cost: ₹0";
   });
 
+  
   form.addEventListener("submit", function (e) {
     e.preventDefault();
 

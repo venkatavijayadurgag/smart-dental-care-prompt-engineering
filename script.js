@@ -1,5 +1,14 @@
 document.addEventListener("DOMContentLoaded", () => {
   const form = document.querySelector("form");
+  const serviceSelect = document.getElementById("service");
+  const costText = document.getElementById("cost");
+
+  serviceSelect.addEventListener("change", () => {
+    const price = serviceSelect.value;
+    costText.textContent = price
+      ? `Estimated Cost: ₹${price}`
+      : "Estimated Cost: ₹0";
+  });
 
   form.addEventListener("submit", function (e) {
     e.preventDefault();
@@ -7,7 +16,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const name = form.querySelector("input[type='text']").value;
     const phone = form.querySelector("input[type='tel']").value;
     const date = form.querySelector("input[type='date']").value;
-    const service = form.querySelector("select").value;
+    const service = serviceSelect.options[serviceSelect.selectedIndex].text;
 
     if (!name || !phone || !date || !service) {
       alert("Please fill all details before booking.");
@@ -19,5 +28,6 @@ document.addEventListener("DOMContentLoaded", () => {
     );
 
     form.reset();
+    costText.textContent = "Estimated Cost: ₹0";
   });
 });

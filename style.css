@@ -1,65 +1,74 @@
-body{
-font-family: Arial;
-margin:0;
-background:#f4f9ff;
+let appointments = {};
+
+let today = new Date().toISOString().split("T")[0];
+
+document.getElementById("date").setAttribute("min", today);
+
+
+let service = document.getElementById("service");
+let cost = document.getElementById("cost");
+
+service.addEventListener("change", function(){
+
+if(service.value=="")
+cost.innerHTML="Estimated Cost: ₹0";
+
+else
+cost.innerHTML="Estimated Cost: ₹"+service.value;
+
+});
+
+
+document.getElementById("appointmentForm").addEventListener("submit", function(e){
+
+e.preventDefault();
+
+let name = document.getElementById("name").value;
+let phone = document.getElementById("phone").value;
+let date = document.getElementById("date").value;
+
+let namePattern=/^[A-Za-z ]+$/;
+let phonePattern=/^[6-9]\d{9}$/;
+
+
+if(!namePattern.test(name)){
+alert("Name should contain only letters");
+return;
 }
 
-header{
-background:#0077b6;
-color:white;
-padding:20px;
-text-align:center;
+
+if(!phonePattern.test(phone)){
+alert("Enter valid mobile number");
+return;
 }
 
-nav a{
-color:white;
-margin:10px;
-text-decoration:none;
-font-weight:bold;
+
+if(!appointments[date])
+appointments[date]=[];
+
+
+if(appointments[date].length>=50){
+
+document.getElementById("message").innerHTML="❌ Appointments are closed for this date";
+
+document.getElementById("bookBtn").disabled=true;
+
+return;
+
 }
 
-.hero{
-text-align:center;
-padding:40px;
-background:#caf0f8;
-}
 
-section{
-padding:40px;
-text-align:center;
-}
+appointments[date].push({
 
-ul{
-list-style:none;
-}
+name:name,
+phone:phone
 
-input,select,button{
-width:80%;
-padding:10px;
-margin:10px;
-border-radius:5px;
-border:1px solid #ccc;
-}
+});
 
-button{
-background:#0077b6;
-color:white;
-border:none;
-cursor:pointer;
-}
+document.getElementById("message").innerHTML="✅ Appointment booked successfully";
 
-button:hover{
-background:#023e8a;
-}
+document.getElementById("appointmentForm").reset();
 
-#cost{
-font-weight:bold;
-color:green;
-}
+cost.innerHTML="Estimated Cost: ₹0";
 
-footer{
-background:#0077b6;
-color:white;
-padding:15px;
-text-align:center;
-}
+});

@@ -1,61 +1,270 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Smart Dental Care</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Smart Dental Care</title>
+
+<style>
+
+body{
+font-family: Arial;
+margin:0;
+background:#f0f8ff;
+}
+
+header{
+background:#0077b6;
+color:white;
+text-align:center;
+padding:20px;
+}
+
+.container{
+width:90%;
+max-width:600px;
+margin:auto;
+margin-top:30px;
+background:white;
+padding:25px;
+border-radius:10px;
+box-shadow:0px 0px 10px rgba(0,0,0,0.1);
+}
+
+h2{
+text-align:center;
+color:#0077b6;
+}
+
+input,select,button{
+width:100%;
+padding:10px;
+margin:10px 0;
+border-radius:5px;
+border:1px solid #ccc;
+font-size:16px;
+}
+
+button{
+background:#0077b6;
+color:white;
+border:none;
+cursor:pointer;
+}
+
+button:hover{
+background:#023e8a;
+}
+
+#cost{
+font-weight:bold;
+color:green;
+}
+
+#message{
+text-align:center;
+font-weight:bold;
+margin-top:15px;
+}
+
+footer{
+margin-top:40px;
+text-align:center;
+background:#0077b6;
+color:white;
+padding:15px;
+}
+
+</style>
+
 </head>
+
 <body>
 
-  
-  <!-- HERO SECTION -->
-  <section class="hero">
-    <div class="hero-content">
-      <h1>Dental care that respects your time</h1>
-      <p>
-        A calm, modern dental clinic experience designed to make
-        appointments simple, fast, and stress-free.
-      </p>
-      <a href="#appointment" class="primary-btn">Book Appointment</a>
-    </div>
-  </section>
+<header>
 
-  <!-- SERVICES -->
-  <section class="services">
-    <h2>Our Services</h2>
-    <div class="service-cards">
-      <div class="card">General Checkup</div>
-      <div class="card">Teeth Cleaning</div>
-      <div class="card">Root Canal Treatment</div>
-      <div class="card">Braces & Alignment</div>
-    </div>
-  </section>
+<h1>🦷 Smart Dental Care Hospital</h1>
+<p>Book Your Dental Appointment Easily</p>
 
-  <!-- APPOINTMENT -->
-  <section id="appointment" class="appointment">
-    <h2>Book an Appointment</h2>
+</header>
 
-    <form>
-      <input type="text" placeholder="Your Name" required>
-      <input type="tel" placeholder="Phone Number" required>
-      <input type="date" required>
+<div class="container">
 
-      <select id="service" required>
-        <option value="">Select Service</option>
-        <option value="500">General Checkup</option>
-        <option value="800">Teeth Cleaning</option>
-        <option value="2500">Root Canal</option>
-        <option value="4000">Braces</option>
-      </select>
+<h2>Appointment Booking</h2>
 
-      <p id="cost">Estimated Cost: ₹0</p>
+<form id="appointmentForm">
 
-      <button type="submit">Confirm Appointment</button>
-    </form>
-  </section>
+<input
+type="text"
+id="name"
+placeholder="Patient Name"
+pattern="[A-Za-z ]+"
+title="Name should contain only letters"
+required
+>
 
-  <script src="script.js"></script>
+<input
+type="tel"
+id="phone"
+placeholder="Mobile Number"
+pattern="[6-9]{1}[0-9]{9}"
+maxlength="10"
+title="Enter valid 10 digit mobile number"
+required
+>
+
+<input
+type="date"
+id="date"
+required
+>
+
+<select id="time" required>
+
+<option value="">Select Time Slot</option>
+
+<option>10:00 AM</option>
+<option>11:00 AM</option>
+<option>12:00 PM</option>
+<option>2:00 PM</option>
+<option>3:00 PM</option>
+<option>4:00 PM</option>
+
+</select>
+
+<select id="service" required>
+
+<option value="">Select Treatment</option>
+
+<option value="500">General Checkup</option>
+<option value="800">Teeth Cleaning</option>
+<option value="2500">Root Canal</option>
+<option value="4000">Braces Treatment</option>
+<option value="3000">Tooth Extraction</option>
+
+</select>
+
+<p id="cost">Estimated Cost: ₹0</p>
+
+<button type="submit" id="bookBtn">
+Confirm Appointment
+</button>
+
+</form>
+
+<p id="message"></p>
+
+</div>
+
+<footer>
+
+© 2026 Smart Dental Care Hospital
+
+</footer>
+
+<script>
+
+let appointments = {};
+
+// set minimum date as today
+
+let today = new Date().toISOString().split("T")[0];
+
+document.getElementById("date").setAttribute("min", today);
+
+
+// show treatment cost
+
+let service = document.getElementById("service");
+let cost = document.getElementById("cost");
+
+service.addEventListener("change", function(){
+
+if(service.value == "")
+{
+cost.innerHTML = "Estimated Cost: ₹0";
+}
+else
+{
+cost.innerHTML = "Estimated Cost: ₹" + service.value;
+}
+
+});
+
+
+// form submit
+
+document.getElementById("appointmentForm").addEventListener("submit", function(e){
+
+e.preventDefault();
+
+let name = document.getElementById("name").value;
+let phone = document.getElementById("phone").value;
+let date = document.getElementById("date").value;
+
+let namePattern = /^[A-Za-z ]+$/;
+let phonePattern = /^[6-9]\d{9}$/;
+
+
+// name validation
+
+if(!namePattern.test(name))
+{
+alert("Name should contain only letters");
+return;
+}
+
+
+// mobile validation
+
+if(!phonePattern.test(phone))
+{
+alert("Enter valid 10 digit mobile number");
+return;
+}
+
+
+// appointment limit check
+
+if(!appointments[date])
+{
+appointments[date] = [];
+}
+
+if(appointments[date].length >= 50)
+{
+
+document.getElementById("message").innerHTML = "❌ Appointments are closed for this date.";
+
+document.getElementById("bookBtn").disabled = true;
+
+return;
+
+}
+
+
+// add appointment
+
+appointments[date].push({
+
+name:name,
+phone:phone
+
+});
+
+
+document.getElementById("message").innerHTML = "✅ Appointment Booked Successfully!";
+
+this.reset();
+
+cost.innerHTML = "Estimated Cost: ₹0";
+
+});
+
+</script>
+
 </body>
+
 </html>

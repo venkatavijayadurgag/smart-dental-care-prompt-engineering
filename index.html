@@ -1,4 +1,3 @@
-```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,30 +5,45 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Smart Dental Care Hospital</title>
+<title>Smart Dental Clinic</title>
 
 <style>
 
 body{
-font-family: Arial, sans-serif;
 margin:0;
-background:#eef5fb;
+font-family:Arial;
+background:#f4f8fc;
 }
 
 header{
-background:#0b6fa4;
+background:#0a6ebd;
+color:white;
+padding:15px 40px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+}
+
+nav a{
+color:white;
+margin:10px;
+text-decoration:none;
+font-weight:bold;
+}
+
+.hero{
+height:450px;
+background:url("https://images.pexels.com/photos/3845682/pexels-photo-3845682.jpeg") center/cover;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
 color:white;
 text-align:center;
-padding:25px;
 }
 
-header h1{
-margin:0;
-font-size:32px;
-}
-
-header p{
-margin-top:8px;
+.hero h1{
+font-size:42px;
 }
 
 .services{
@@ -37,96 +51,62 @@ padding:40px;
 text-align:center;
 }
 
-.services h2{
-color:#0b6fa4;
-}
-
-.service-container{
+.service-grid{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
 gap:20px;
-margin-top:30px;
-padding:0 30px;
 }
 
-.service-card{
+.card{
 background:white;
 border-radius:10px;
-box-shadow:0 3px 8px rgba(0,0,0,0.1);
-overflow:hidden;
+box-shadow:0 3px 10px rgba(0,0,0,0.1);
+padding:15px;
 }
 
-.service-card img{
+.card img{
 width:100%;
 height:180px;
 object-fit:cover;
+border-radius:8px;
 }
 
-.service-card h3{
-color:#0b6fa4;
-margin:10px 0;
-}
-
-.service-card p{
-font-size:14px;
-padding:0 15px 15px 15px;
+.about{
+padding:40px;
+background:white;
+text-align:center;
 }
 
 .appointment{
-display:flex;
-justify-content:center;
 padding:40px;
-}
-
-.form-box{
-background:white;
-padding:30px;
-border-radius:10px;
-width:450px;
-box-shadow:0 3px 10px rgba(0,0,0,0.1);
-}
-
-.form-box h2{
 text-align:center;
-color:#0b6fa4;
 }
 
-input,select,button{
-width:100%;
-padding:10px;
+form{
+max-width:400px;
+margin:auto;
+display:flex;
+flex-direction:column;
+}
+
+input,select{
 margin:10px 0;
-border-radius:5px;
-border:1px solid #ccc;
-font-size:15px;
+padding:10px;
 }
 
 button{
-background:#0b6fa4;
+background:#0a6ebd;
 color:white;
 border:none;
+padding:12px;
 cursor:pointer;
 }
 
-button:hover{
-background:#084f76;
-}
-
-#cost{
-color:green;
-font-weight:bold;
-}
-
-#message{
-text-align:center;
-font-weight:bold;
-}
-
 footer{
-background:#0b6fa4;
+background:#0a6ebd;
 color:white;
 text-align:center;
-padding:15px;
-margin-top:30px;
+padding:10px;
 }
 
 </style>
@@ -136,201 +116,132 @@ margin-top:30px;
 <body>
 
 <header>
+<h2>Smart Dental Clinic</h2>
 
-<h1>🦷 Smart Dental Care Hospital</h1>
-<p>Book Your Dental Appointment Easily</p>
+<nav>
+<a href="#">Home</a>
+<a href="#services">Services</a>
+<a href="#about">About</a>
+<a href="#appointment">Appointment</a>
+</nav>
 
 </header>
 
-<section class="services">
 
-<h2>Our Dental Services</h2>
+<section class="hero">
 
-<div class="service-container">
+<h1>Professional Dental Care</h1>
+<p>Healthy Teeth • Beautiful Smile</p>
 
-<div class="service-card">
-<img src="https://images.unsplash.com/photo-1629909615184-74f495363b67">
-<h3>General Dental Checkup</h3>
-<p>Regular dental examinations help detect oral problems early.</p>
-</div>
+</section>
 
-<div class="service-card">
-<img src="https://images.unsplash.com/photo-1609840114035-3c981b782dfe">
+
+<section class="services" id="services">
+
+<h2>Our Services</h2>
+
+<div class="service-grid">
+
+<div class="card">
+<img src="https://images.pexels.com/photos/3845701/pexels-photo-3845701.jpeg">
 <h3>Teeth Cleaning</h3>
-<p>Professional cleaning removes plaque and tartar for healthy teeth.</p>
+<p>Professional cleaning removes plaque and tartar for healthier teeth.</p>
 </div>
 
-<div class="service-card">
-<img src="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5">
-<h3>Root Canal Treatment</h3>
-<p>Treatment used to repair infected or badly damaged teeth.</p>
-</div>
-
-<div class="service-card">
-<img src="https://images.unsplash.com/photo-1606811841689-23dfddce3e95">
-<h3>Braces Treatment</h3>
-<p>Orthodontic treatment used to straighten teeth and improve bite.</p>
-</div>
-
-<div class="service-card">
-<img src="https://images.unsplash.com/photo-1629909613654-28e377c37b09">
-<h3>Tooth Extraction</h3>
-<p>Safe removal of severely damaged or infected teeth.</p>
-</div>
-
-<div class="service-card">
-<img src="https://images.unsplash.com/photo-1609840114053-3c1b4e0f3996">
+<div class="card">
+<img src="https://images.pexels.com/photos/6528908/pexels-photo-6528908.jpeg">
 <h3>Dental Implants</h3>
-<p>Permanent artificial tooth replacement that looks natural.</p>
+<p>Permanent replacement solution for missing teeth.</p>
 </div>
 
-<div class="service-card">
-<img src="https://images.unsplash.com/photo-1588774069410-84ae30757c8e">
+<div class="card">
+<img src="https://images.pexels.com/photos/4269697/pexels-photo-4269697.jpeg">
+<h3>Pediatric Dentistry</h3>
+<p>Special dental care designed for children.</p>
+</div>
+
+<div class="card">
+<img src="https://images.pexels.com/photos/6627562/pexels-photo-6627562.jpeg">
+<h3>Smile Makeover</h3>
+<p>Cosmetic dental procedures to transform your smile.</p>
+</div>
+
+<div class="card">
+<img src="https://images.pexels.com/photos/3779705/pexels-photo-3779705.jpeg">
 <h3>Teeth Whitening</h3>
-<p>Cosmetic procedure to brighten and whiten your smile.</p>
+<p>Advanced whitening treatments for brighter teeth.</p>
 </div>
 
-<div class="service-card">
-<img src="https://images.unsplash.com/photo-1588771930296-88c2cb03f386">
-<h3>Gum Disease Treatment</h3>
-<p>Treatment for gum infections and bleeding gums.</p>
+<div class="card">
+<img src="https://images.pexels.com/photos/4269364/pexels-photo-4269364.jpeg">
+<h3>Root Canal</h3>
+<p>Painless treatment for infected tooth pulp.</p>
 </div>
 
-<div class="service-card">
-<img src="https://images.unsplash.com/photo-1598257006458-087169a1f08d">
-<h3>Children Dental Care</h3>
-<p>Special dental treatments and preventive care for children.</p>
+<div class="card">
+<img src="https://images.pexels.com/photos/4269696/pexels-photo-4269696.jpeg">
+<h3>Braces</h3>
+<p>Orthodontic treatment to align teeth perfectly.</p>
 </div>
 
-<div class="service-card">
-<img src="https://images.unsplash.com/photo-1606813902917-7b3c4c8d8b67">
-<h3>Dentures</h3>
-<p>Artificial removable teeth for patients with missing teeth.</p>
+<div class="card">
+<img src="https://images.pexels.com/photos/3779703/pexels-photo-3779703.jpeg">
+<h3>Dental Checkup</h3>
+<p>Routine dental examinations for oral health.</p>
 </div>
 
 </div>
 
 </section>
 
-<section class="appointment">
 
-<div class="form-box">
+<section class="about" id="about">
 
-<h2>Appointment Booking</h2>
+<h2>About Our Clinic</h2>
 
-<form id="appointmentForm">
+<p>
 
-<input type="text" id="name" placeholder="Patient Name" pattern="[A-Za-z ]+" title="Only letters allowed" required>
+Smart Dental Clinic offers advanced dental treatments with modern
+technology and experienced dentists to ensure the best oral care.
 
-<input type="tel" id="phone" placeholder="Mobile Number" pattern="[6-9]{1}[0-9]{9}" maxlength="10" required>
+</p>
 
-<input type="date" id="date" required>
+</section>
 
-<select id="time" required>
 
-<option value="">Select Time Slot</option>
-<option>10:00 AM</option>
-<option>11:00 AM</option>
-<option>12:00 PM</option>
-<option>2:00 PM</option>
-<option>3:00 PM</option>
-<option>4:00 PM</option>
+<section class="appointment" id="appointment">
 
+<h2>Book Appointment</h2>
+
+<form>
+
+<input type="text" placeholder="Full Name" required>
+
+<input type="tel" placeholder="Phone Number" required>
+
+<input type="date" required>
+
+<select>
+<option>Select Service</option>
+<option>Teeth Cleaning</option>
+<option>Dental Implants</option>
+<option>Pediatric Dentistry</option>
+<option>Smile Makeover</option>
+<option>Whitening</option>
 </select>
 
-<select id="service" required>
-
-<option value="">Select Treatment</option>
-<option value="500">General Checkup</option>
-<option value="800">Teeth Cleaning</option>
-<option value="2500">Root Canal</option>
-<option value="4000">Braces</option>
-
-</select>
-
-<p id="cost">Estimated Cost: ₹0</p>
-
-<button type="submit" id="bookBtn">Confirm Appointment</button>
+<button type="submit">Book Appointment</button>
 
 </form>
 
-<p id="message"></p>
-
-</div>
-
 </section>
+
 
 <footer>
 
-<p>© 2026 Smart Dental Care Hospital</p>
+<p>© 2026 Smart Dental Clinic</p>
 
 </footer>
 
-<script>
-
-let appointments = {};
-
-let today = new Date().toISOString().split("T")[0];
-
-document.getElementById("date").setAttribute("min",today);
-
-let service=document.getElementById("service");
-let cost=document.getElementById("cost");
-
-service.addEventListener("change",function(){
-
-if(service.value=="")
-cost.innerHTML="Estimated Cost: ₹0";
-
-else
-cost.innerHTML="Estimated Cost: ₹"+service.value;
-
-});
-
-document.getElementById("appointmentForm").addEventListener("submit",function(e){
-
-e.preventDefault();
-
-let name=document.getElementById("name").value;
-let phone=document.getElementById("phone").value;
-let date=document.getElementById("date").value;
-
-let namePattern=/^[A-Za-z ]+$/;
-let phonePattern=/^[6-9]\d{9}$/;
-
-if(!namePattern.test(name)){
-alert("Name should contain only letters");
-return;
-}
-
-if(!phonePattern.test(phone)){
-alert("Enter valid mobile number");
-return;
-}
-
-if(!appointments[date])
-appointments[date]=[];
-
-if(appointments[date].length>=50){
-
-document.getElementById("message").innerHTML="❌ Appointments are closed for this date";
-document.getElementById("bookBtn").disabled=true;
-
-return;
-}
-
-appointments[date].push({name:name,phone:phone});
-
-document.getElementById("message").innerHTML="✅ Appointment booked successfully";
-
-document.getElementById("appointmentForm").reset();
-
-cost.innerHTML="Estimated Cost: ₹0";
-
-});
-
-</script>
-
 </body>
 </html>
-```

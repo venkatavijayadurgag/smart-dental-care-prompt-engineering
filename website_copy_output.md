@@ -2,6 +2,7 @@
 
 ## Project: Smart Dental Care
 
+
 This document contains the AI-generated website content used in the Smart Dental Care project.
 The content was generated using structured prompts and later integrated into the website interface.
 
